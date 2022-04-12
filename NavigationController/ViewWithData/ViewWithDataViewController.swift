@@ -29,4 +29,16 @@ class ViewWithDataViewController: UIViewController{
             navigationController?.pushViewController(customTableViewController, animated: true)
         }
     }
+    
+    @IBAction func SettingTableViewController(_ sender: Any) {
+        if let settingTableViewController = storyboard?.instantiateViewController(withIdentifier: "SettingTableViewController") {
+            navigationController?.pushViewController(settingTableViewController, animated: true)
+        }
+    }
+    
+    @IBAction func SampleTableViewButtonTouched(_ sender: Any) {
+        if let sampleViewController = storyboard?.instantiateViewController(withIdentifier: "SampleViewController") {
+            navigationController?.pushViewController(sampleViewController, animated: true)
+        }
+    }
 }
