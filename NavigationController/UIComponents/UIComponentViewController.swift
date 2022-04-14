@@ -19,9 +19,14 @@ class UIComponentViewController: UIViewController {
     }
     
     @IBAction func sampleButtonTouched(_ sender: Any) {
-        if let sampleLabelViewController = storyboard?.instantiateViewController(withIdentifier: "SampleLabelViewController") {
+        if let sampleLabelViewController = storyboard?.instantiateViewController(withIdentifier: "SampleTextFieldViewController") {
             navigationController?.pushViewController(sampleLabelViewController, animated: true)
         }
     }
     
+    @IBAction func textFieldButtonTouched(_ sender: Any) {
+        if let textFieldViewController = storyboard?.instantiateViewController(withIdentifier: "TextFieldViewController") {
+            navigationController?.pushViewController(textFieldViewController, animated: true)
+        }
+    }
 }

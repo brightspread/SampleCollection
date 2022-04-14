@@ -122,6 +122,9 @@
                                 <rect key="frame" x="275" y="312" width="82" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="TextField"/>
+                                <connections>
+                                    <action selector="textFieldButtonTouched:" destination="Seg-ns-2pj" eventType="touchUpInside" id="vxE-wY-bDb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UT-V5-WPI">
                                 <rect key="frame" x="68.666666666666671" y="560" width="73.000000000000014" height="31"/>
@@ -260,6 +263,169 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Du4-1p-dwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="958.87850467289718" y="775.59395248380133"/>
+        </scene>
+        <!--Text Field View Controller-->
+        <scene sceneID="QyG-IM-XFx">
+            <objects>
+                <viewController storyboardIdentifier="TextFieldViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6T8-QV-hbP" customClass="TextFieldViewController" customModule="SampleCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oKM-SF-ZJY">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TextField" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJF-We-qNG">
+                                <rect key="frame" x="179.66666666666666" y="98" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름을 입력해주세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l1U-tr-d3d">
+                                <rect key="frame" x="64" y="199" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="GWy-5q-DOb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ot2-5I-dO1">
+                                <rect key="frame" x="185" y="428.33333333333331" width="58.333333333333343" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonTouched:" destination="6T8-QV-hbP" eventType="touchUpInside" id="8Ui-g7-zpe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXX-Tc-fhr">
+                                <rect key="frame" x="193.33333333333334" y="398" width="41.333333333333343" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.60000836849999994" green="0.59998512270000004" blue="0.60000085830000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="전화번호를 입력해주세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NUi-kw-joZ">
+                                <rect key="frame" x="64" y="256" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="P2E-JV-WF6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일을 입력해주세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Sct-dd-VYY">
+                                <rect key="frame" x="64" y="314" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="2Sw-BQ-8FA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4IM-ja-d1s"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zXX-Tc-fhr" firstAttribute="top" secondItem="Sct-dd-VYY" secondAttribute="bottom" constant="50" id="55B-rl-r3K"/>
+                            <constraint firstItem="YJF-We-qNG" firstAttribute="centerX" secondItem="4IM-ja-d1s" secondAttribute="centerX" id="D4z-G4-OXR"/>
+                            <constraint firstItem="zXX-Tc-fhr" firstAttribute="centerX" secondItem="4IM-ja-d1s" secondAttribute="centerX" id="DaC-uh-Upz"/>
+                            <constraint firstItem="YJF-We-qNG" firstAttribute="top" secondItem="4IM-ja-d1s" secondAttribute="top" constant="54" id="YGt-wD-UrK"/>
+                            <constraint firstItem="NUi-kw-joZ" firstAttribute="top" secondItem="l1U-tr-d3d" secondAttribute="bottom" constant="23" id="b6J-7o-UOT"/>
+                            <constraint firstItem="Sct-dd-VYY" firstAttribute="top" secondItem="NUi-kw-joZ" secondAttribute="bottom" constant="24" id="bZ6-vh-Ihc"/>
+                            <constraint firstItem="ot2-5I-dO1" firstAttribute="centerX" secondItem="4IM-ja-d1s" secondAttribute="centerX" id="far-WL-BUZ"/>
+                            <constraint firstItem="Sct-dd-VYY" firstAttribute="centerX" secondItem="NUi-kw-joZ" secondAttribute="centerX" id="i8D-Lw-e4u"/>
+                            <constraint firstItem="ot2-5I-dO1" firstAttribute="top" secondItem="zXX-Tc-fhr" secondAttribute="bottom" constant="10" id="jHf-mC-LXB"/>
+                            <constraint firstItem="NUi-kw-joZ" firstAttribute="centerX" secondItem="l1U-tr-d3d" secondAttribute="centerX" id="jmT-cd-DbJ"/>
+                            <constraint firstItem="l1U-tr-d3d" firstAttribute="top" secondItem="YJF-We-qNG" secondAttribute="bottom" constant="80" id="tLV-G9-Hzv"/>
+                            <constraint firstItem="l1U-tr-d3d" firstAttribute="centerX" secondItem="4IM-ja-d1s" secondAttribute="centerX" id="yip-Ou-gP7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnDone" destination="ot2-5I-dO1" id="sNn-SV-WN1"/>
+                        <outlet property="lbResult" destination="zXX-Tc-fhr" id="ZXi-ve-Bgm"/>
+                        <outlet property="tfEmail" destination="Sct-dd-VYY" id="q5Y-wq-Pk4"/>
+                        <outlet property="tfName" destination="l1U-tr-d3d" id="3un-bY-fvo"/>
+                        <outlet property="tfPhone" destination="NUi-kw-joZ" id="Q2m-2B-O9x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ine-3K-Co1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1680.8411214953271" y="772.35421166306696"/>
+        </scene>
+        <!--Sample Text Field View Controller-->
+        <scene sceneID="Q5N-0A-thB">
+            <objects>
+                <viewController storyboardIdentifier="SampleTextFieldViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N1a-gh-Q27" customClass="SampleTextFieldViewController" customModule="SampleCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MXg-Hg-4CR">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample TextField" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aA9-TR-DlA">
+                                <rect key="frame" x="149" y="94" width="130" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름을 입력해주세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hVk-DK-iWq">
+                                <rect key="frame" x="64" y="173" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="ZqN-3p-D41"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="전화번호를 입력해주세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="g4u-W8-PD0">
+                                <rect key="frame" x="64" y="254" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="kTo-xC-xPU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1N-gN-wXK">
+                                <rect key="frame" x="181" y="458" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonTouched:" destination="N1a-gh-Q27" eventType="touchUpInside" id="yl2-SO-20z"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7l-Bs-RPe">
+                                <rect key="frame" x="193.33333333333334" y="410" width="41.333333333333343" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.60000836849999994" green="0.59998512270000004" blue="0.60000085830000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일을 입력해주세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="D1k-2e-s2P">
+                                <rect key="frame" x="64" y="333" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="TsC-mp-KB9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="go"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="L8W-yc-ka3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aA9-TR-DlA" firstAttribute="top" secondItem="L8W-yc-ka3" secondAttribute="top" constant="50" id="1md-UH-3mV"/>
+                            <constraint firstItem="aA9-TR-DlA" firstAttribute="centerX" secondItem="L8W-yc-ka3" secondAttribute="centerX" id="6gu-lz-0q3"/>
+                            <constraint firstItem="W1N-gN-wXK" firstAttribute="top" secondItem="v7l-Bs-RPe" secondAttribute="bottom" constant="27" id="Ffg-gm-hWA"/>
+                            <constraint firstItem="D1k-2e-s2P" firstAttribute="centerX" secondItem="g4u-W8-PD0" secondAttribute="centerX" id="Hvi-Up-vgh"/>
+                            <constraint firstItem="v7l-Bs-RPe" firstAttribute="centerX" secondItem="L8W-yc-ka3" secondAttribute="centerX" id="Jdz-ga-aaZ"/>
+                            <constraint firstItem="D1k-2e-s2P" firstAttribute="top" secondItem="g4u-W8-PD0" secondAttribute="bottom" constant="45" id="KgZ-rz-sNJ"/>
+                            <constraint firstItem="W1N-gN-wXK" firstAttribute="centerX" secondItem="L8W-yc-ka3" secondAttribute="centerX" id="Ub7-Kd-bMG"/>
+                            <constraint firstItem="hVk-DK-iWq" firstAttribute="centerX" secondItem="L8W-yc-ka3" secondAttribute="centerX" id="Vlj-vD-lSN"/>
+                            <constraint firstItem="g4u-W8-PD0" firstAttribute="top" secondItem="hVk-DK-iWq" secondAttribute="bottom" constant="47" id="sYo-YP-Z29"/>
+                            <constraint firstItem="hVk-DK-iWq" firstAttribute="top" secondItem="aA9-TR-DlA" secondAttribute="bottom" constant="58" id="vBz-Y2-tis"/>
+                            <constraint firstItem="g4u-W8-PD0" firstAttribute="centerX" secondItem="hVk-DK-iWq" secondAttribute="centerX" id="xzr-cJ-gQT"/>
+                            <constraint firstItem="v7l-Bs-RPe" firstAttribute="top" secondItem="D1k-2e-s2P" secondAttribute="bottom" constant="43" id="yzq-wr-g5z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lbResult" destination="v7l-Bs-RPe" id="KLT-mQ-3LM"/>
+                        <outlet property="tfEmail" destination="D1k-2e-s2P" id="wak-RF-1dl"/>
+                        <outlet property="tfName" destination="hVk-DK-iWq" id="W6b-hy-HkY"/>
+                        <outlet property="tfPhone" destination="g4u-W8-PD0" id="QVI-s1-HTi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQQ-9u-Fmd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2501" y="776"/>
         </scene>
         <!--View Samples View Controller-->
         <scene sceneID="ZWF-7q-4ES">
