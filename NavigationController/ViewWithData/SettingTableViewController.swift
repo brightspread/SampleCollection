@@ -53,14 +53,19 @@ extension SettingTableViewController: UITableViewDataSource {
         
         // var, let
         let att = NSMutableAttributedString.init(string: text, attributes: attributes)
-        att.append(NSAttributedString.init(string: "파랑파랑파랑파랑", attributes: [.foregroundColor: UIColor.blue]))
-        att.append(NSAttributedString.init(string: "노랑노랑노랑노랑", attributes: [.foregroundColor: UIColor.yellow]))
-        att.removeAttribute(.foregroundColor, range: NSRange.init(location: 3, length: 7))
-        //att = NSMutableAttributedString.init(string: text, attributes: attributes)
+        att.append(NSAttributedString.init(string: "파랑", attributes: [.foregroundColor: UIColor.blue]))
+        
         content.attributedText = att
         cell.contentConfiguration = content
         return cell
     }
+    
+    /*
+     att.append(NSAttributedString.init(string: "파랑파랑파랑파랑", attributes: [.foregroundColor: UIColor.blue]))
+     att.append(NSAttributedString.init(string: "노랑노랑노랑노랑", attributes: [.foregroundColor: UIColor.yellow]))
+     att.removeAttribute(.foregroundColor, range: NSRange.init(location: 3, length: 7))
+     //att = NSMutableAttributedString.init(string: text, attributes: attributes)
+     */
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 55

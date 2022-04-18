@@ -29,4 +29,11 @@ class UIComponentViewController: UIViewController {
             navigationController?.pushViewController(textFieldViewController, animated: true)
         }
     }
+    
+    @IBAction func webkitButtonTouched(_ sender: Any) {
+        if let webKitViewController = storyboard?.instantiateViewController(withIdentifier: "SampleWebKitViewController") {
+            navigationController?.pushViewController(webKitViewController, animated: true)
+        }
+        
+    }
 }
