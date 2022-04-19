@@ -34,6 +34,5 @@ class UIComponentViewController: UIViewController {
         if let webKitViewController = storyboard?.instantiateViewController(withIdentifier: "SampleWebKitViewController") {
             navigationController?.pushViewController(webKitViewController, animated: true)
         }
-        
     }
 }

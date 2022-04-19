@@ -485,13 +485,53 @@
                                             <action selector="closeButtonTouched:" destination="Ya4-rN-wfG" eventType="touchUpInside" id="eeQ-ov-Jyv"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQ8-nG-76L">
+                                        <rect key="frame" x="0.0" y="8" width="46" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrow.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="backButtonTouched:" destination="Ya4-rN-wfG" eventType="touchUpInside" id="C0X-yE-NiC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsA-Xu-YFu">
+                                        <rect key="frame" x="43" y="8" width="46" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system"/>
+                                        <connections>
+                                            <action selector="forwardButtonTouched:" destination="Ya4-rN-wfG" eventType="touchUpInside" id="fYN-3A-Kap"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhB-Lk-o2B">
+                                        <rect key="frame" x="87" y="8" width="43" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrow.clockwise" catalog="system"/>
+                                        <connections>
+                                            <action selector="refreshButtonTouched:" destination="Ya4-rN-wfG" eventType="touchUpInside" id="Z79-mS-jiz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MT6-G3-bKa">
+                                        <rect key="frame" x="124" y="7" width="43" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="homekit" catalog="system"/>
+                                        <connections>
+                                            <action selector="homeButtonTouched:" destination="Ya4-rN-wfG" eventType="touchUpInside" id="UP5-rU-n5J"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="hsA-Xu-YFu" firstAttribute="leading" secondItem="NQ8-nG-76L" secondAttribute="trailing" constant="-3" id="15A-nn-a22"/>
                                     <constraint firstAttribute="bottom" secondItem="sWb-9A-3TQ" secondAttribute="bottom" constant="46.666666666666742" id="3tU-5f-4iq"/>
+                                    <constraint firstItem="MT6-G3-bKa" firstAttribute="leading" secondItem="BhB-Lk-o2B" secondAttribute="trailing" constant="-6" id="47e-LO-ZgI"/>
+                                    <constraint firstItem="BhB-Lk-o2B" firstAttribute="leading" secondItem="hsA-Xu-YFu" secondAttribute="trailing" constant="-2" id="JxS-vn-TMj"/>
+                                    <constraint firstItem="hsA-Xu-YFu" firstAttribute="centerY" secondItem="NQ8-nG-76L" secondAttribute="centerY" id="Kwy-rg-qXr"/>
+                                    <constraint firstItem="MT6-G3-bKa" firstAttribute="centerY" secondItem="BhB-Lk-o2B" secondAttribute="centerY" id="NWF-b7-sef"/>
                                     <constraint firstItem="sWb-9A-3TQ" firstAttribute="centerY" secondItem="lcn-6M-A18" secondAttribute="centerY" id="aBN-1P-ABF"/>
                                     <constraint firstAttribute="trailing" secondItem="pIK-qL-6iZ" secondAttribute="trailing" constant="9" id="llp-El-MVd"/>
+                                    <constraint firstItem="NQ8-nG-76L" firstAttribute="top" secondItem="lcn-6M-A18" secondAttribute="top" constant="8" id="nDj-E2-2cO"/>
                                     <constraint firstItem="sWb-9A-3TQ" firstAttribute="top" secondItem="pIK-qL-6iZ" secondAttribute="bottom" constant="7.6666666666666288" id="o81-bv-cyH"/>
+                                    <constraint firstItem="NQ8-nG-76L" firstAttribute="leading" secondItem="lcn-6M-A18" secondAttribute="leading" id="oUu-rf-WUa"/>
+                                    <constraint firstItem="BhB-Lk-o2B" firstAttribute="centerY" secondItem="hsA-Xu-YFu" secondAttribute="centerY" id="tFj-b2-QNb"/>
                                     <constraint firstItem="sWb-9A-3TQ" firstAttribute="centerX" secondItem="lcn-6M-A18" secondAttribute="centerX" id="tyJ-gB-N4S"/>
                                     <constraint firstItem="pIK-qL-6iZ" firstAttribute="top" secondItem="lcn-6M-A18" secondAttribute="top" constant="8" id="xxj-VI-B68"/>
                                 </constraints>
@@ -511,6 +551,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnBack" destination="NQ8-nG-76L" id="XFE-sX-vp5"/>
+                        <outlet property="btnForward" destination="hsA-Xu-YFu" id="hbz-md-Ieu"/>
+                        <outlet property="btnReload" destination="BhB-Lk-o2B" id="ydn-zd-HQN"/>
                         <outlet property="vWeb" destination="lcn-6M-A18" id="cuo-uO-Whv"/>
                         <outlet property="wvTest" destination="sWb-9A-3TQ" id="VLn-cp-7y9"/>
                     </connections>
@@ -564,14 +607,54 @@
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
                                     </wkWebView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvg-PY-Uvd">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrow.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="backButtonTouched:" destination="EVE-TY-HUt" eventType="touchUpInside" id="emz-b7-N85"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20O-LS-UAG">
+                                        <rect key="frame" x="27" y="0.0" width="46" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system"/>
+                                        <connections>
+                                            <action selector="forwardButtonTouched:" destination="EVE-TY-HUt" eventType="touchUpInside" id="wsY-Cs-aQ6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PR9-Gn-euh">
+                                        <rect key="frame" x="63" y="0.0" width="43" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrow.clockwise" catalog="system"/>
+                                        <connections>
+                                            <action selector="reloadButtonTouched:" destination="EVE-TY-HUt" eventType="touchUpInside" id="5fS-U3-U1c"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzS-hF-bnB">
+                                        <rect key="frame" x="97" y="0.0" width="49.333333333333343" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="homekit" catalog="system"/>
+                                        <connections>
+                                            <action selector="homtButtonTouched:" destination="EVE-TY-HUt" eventType="touchUpInside" id="twc-Pp-LCB"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="3ow-e4-jTB" secondAttribute="trailing" constant="10" id="EIJ-lU-LbC"/>
+                                    <constraint firstItem="20O-LS-UAG" firstAttribute="centerY" secondItem="fvg-PY-Uvd" secondAttribute="centerY" id="EQf-j0-gs8"/>
                                     <constraint firstAttribute="trailing" secondItem="Qwu-0p-2VY" secondAttribute="trailing" constant="10" id="Kxj-Es-84E"/>
+                                    <constraint firstItem="fvg-PY-Uvd" firstAttribute="leading" secondItem="aK5-H5-EKu" secondAttribute="leading" id="OQb-ny-8Ko"/>
                                     <constraint firstAttribute="bottom" secondItem="Qwu-0p-2VY" secondAttribute="bottom" constant="8" id="Vqj-zQ-pXQ"/>
                                     <constraint firstItem="Qwu-0p-2VY" firstAttribute="leading" secondItem="aK5-H5-EKu" secondAttribute="leading" constant="8" id="YIh-QS-Twk"/>
+                                    <constraint firstItem="hzS-hF-bnB" firstAttribute="centerY" secondItem="PR9-Gn-euh" secondAttribute="centerY" id="ael-Ec-I34"/>
+                                    <constraint firstItem="20O-LS-UAG" firstAttribute="leading" secondItem="fvg-PY-Uvd" secondAttribute="trailing" constant="-19" id="dqe-mB-2pP"/>
+                                    <constraint firstItem="hzS-hF-bnB" firstAttribute="leading" secondItem="PR9-Gn-euh" secondAttribute="trailing" constant="-9" id="hOf-E6-ESK"/>
                                     <constraint firstItem="Qwu-0p-2VY" firstAttribute="top" secondItem="3ow-e4-jTB" secondAttribute="bottom" constant="16" id="oK6-eG-nis"/>
+                                    <constraint firstItem="fvg-PY-Uvd" firstAttribute="top" secondItem="aK5-H5-EKu" secondAttribute="top" id="pM6-hY-xDz"/>
                                     <constraint firstItem="3ow-e4-jTB" firstAttribute="top" secondItem="aK5-H5-EKu" secondAttribute="top" constant="9" id="syH-yZ-3CX"/>
+                                    <constraint firstItem="PR9-Gn-euh" firstAttribute="leading" secondItem="20O-LS-UAG" secondAttribute="trailing" constant="-10" id="wQC-X3-XcB"/>
+                                    <constraint firstItem="PR9-Gn-euh" firstAttribute="centerY" secondItem="20O-LS-UAG" secondAttribute="centerY" id="xU7-Qt-web"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -589,6 +672,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnBack" destination="fvg-PY-Uvd" id="gne-tO-YdC"/>
+                        <outlet property="btnForward" destination="20O-LS-UAG" id="xwW-M3-VBy"/>
                         <outlet property="vWeb" destination="aK5-H5-EKu" id="xdU-Qb-nWP"/>
                         <outlet property="wkTest" destination="Qwu-0p-2VY" id="SDU-z6-jsy"/>
                     </connections>
@@ -1144,10 +1229,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="bitcoinsign.circle" catalog="system" width="128" height="121"/>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="flashlight.off.fill" catalog="system" width="76" height="128"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="lock.fill" catalog="system" width="128" height="128"/>
         <image name="lockscreen.PNG" width="1125" height="2436"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
