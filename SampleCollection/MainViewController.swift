@@ -34,5 +34,12 @@ class MainViewController: UIViewController {
             navigationController?.pushViewController(viewWithDataViewController, animated: true)
         }
     }
+    
+    @IBAction func libraryButtonTouched(_ sender: Any) {
+        if let libraryViewController = storyboard?.instantiateViewController(withIdentifier: "LibraryViewController") {
+            navigationController?.pushViewController(libraryViewController, animated: true)
+        }
+
+    }
 }
 

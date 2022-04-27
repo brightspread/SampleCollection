@@ -95,7 +95,6 @@ class WebKitViewController: UIViewController {
 extension WebKitViewController: WKUIDelegate {
     func webViewDidClose(_ webView: WKWebView) {  }
     func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {  }
-    
 //    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
 //        NSLog("createWebViewWith :\(navigationAction)")
 //       popupWebView = WKWebView(frame: webView.bounds, configuration: configuration)
@@ -143,5 +142,4 @@ extension WebKitViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         NSLog("didFail \(error)")
     }
-
 }

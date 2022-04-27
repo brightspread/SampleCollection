@@ -115,13 +115,13 @@ extension SampleWebKitViewController: WKNavigationDelegate {
 
 extension SampleWebKitViewController: WKUIDelegate {
     // 새창열기
-    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-    }
-    
-    func webViewDidClose(_ webView: WKWebView) {
-    }
-
-    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
-    }
+//    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+//    }
+//    
+//    func webViewDidClose(_ webView: WKWebView) {
+//    }
+//
+//    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
+//    }
 }
 
