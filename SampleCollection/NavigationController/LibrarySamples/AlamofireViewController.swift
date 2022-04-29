@@ -9,10 +9,24 @@ import UIKit
 import Alamofire
 
 class AlamofireViewController: UIViewController {
+   
+    var blogItems: [Item] = []
+    @IBOutlet weak var tvBlogs: UITableView!
+    @IBOutlet weak var tfSearch: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let query = ["query": "apple"]
+    }
+    
+    @IBAction func searchButtonTouched(_ sender: Any) {
+        if let text = tfSearch.text {
+            searchBlogs(query: text)
+            tfSearch.text = ""
+        }
+    }
+    
+    func searchBlogs(query: String) {
+        let query = ["query": query]
         let header: HTTPHeaders = ["X-Naver-Client-Id": "xd5WmkaxTTKYFMqaAqkf",
                                    "X-Naver-Client-Secret": "D59FMGZyOx"]
         
@@ -20,15 +34,56 @@ class AlamofireViewController: UIViewController {
                    method: .get,
                    parameters: query,
                    headers: header)
-            .responseDecodable(completionHandler: { (response : DataResponse<Blog, AFError>) in
+            .responseDecodable(completionHandler: { [weak self] (response : DataResponse<Blog, AFError>) in
                 NSLog("response : \(response)")
                 switch (response.result) {
                 case .success(let data):
                     NSLog("data : \(data)")
+                    self?.blogItems = data.items
+                    self?.tvBlogs.reloadData()
                 default:
                     NSLog("response: \(response)")
                 }
             })
+    }
+    
+    func removeHTMLTag(text: String) -> String {
+        var removedText = text
+        if (removedText.contains("<b>") || removedText.contains("</b>") || removedText.contains("&quot;") ||
+            removedText.contains("&lt;") || removedText.contains("&gt;") || removedText.contains("&amp;")) {
+                removedText = removedText.replacingOccurrences(of: "<b>", with: "")
+                removedText = removedText.replacingOccurrences(of: "</b>", with: "")
+                removedText = removedText.replacingOccurrences(of: "&quot;", with: "\"")
+                removedText = removedText.replacingOccurrences(of: "&lt;", with: "<")
+                removedText = removedText.replacingOccurrences(of: "&gt;", with: ">")
+                removedText = removedText.replacingOccurrences(of: "&amp;", with: "&")
+        }
+        return removedText
+    }
+}
+
+extension AlamofireViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return blogItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        var content = cell.defaultContentConfiguration()
+        content.text = removeHTMLTag(text: blogItems[indexPath.row].title)
+        cell.contentConfiguration = content
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+}
+
+extension AlamofireViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -53,26 +108,3 @@ struct Item: Codable {
         case bloggername, bloggerlink, postdate
     }
 }
-
-//
-//
-//func searchBlogs() {
-//    let params = ["query": "apple"]
-//    let headers: HTTPHeaders = ["X-Naver-Client-Id": "KYCTGWa967jhznNB3pKb",
-//                                "X-Naver-Client-Secret": "GY9zt3XlS_"]
-//    AF.request("https://openapi.naver.com/v1/search/blog.json",
-//               method: .get,
-//               parameters: params,
-//               encoding: URLEncoding.default,
-//               headers: headers)
-//        .responseDecodable(completionHandler: { (response : DataResponse<Search, AFError>) in
-//            NSLog("response : \(response)")
-//            switch (response.result) {
-//            case .success(let data):
-//                NSLog("data : \(data)")
-//            default:
-//                NSLog("response: \(response)")
-//            }
-//        })
-//
-//}

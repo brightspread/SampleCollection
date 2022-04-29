@@ -1360,18 +1360,64 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-l1-WwX">
+                                <rect key="frame" x="0.0" y="120" width="428" height="711"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dOm-OO-YAH" id="hCh-gj-akL"/>
+                                    <outlet property="delegate" destination="dOm-OO-YAH" id="Ffw-ep-ldI"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUq-0d-UgL">
+                                <rect key="frame" x="0.0" y="832" width="428" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxU-oB-06h">
+                                        <rect key="frame" x="15" y="13" width="353" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKn-h1-k3T">
+                                        <rect key="frame" x="370.66666666666669" y="14.666666666666629" width="48.333333333333314" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="검색"/>
+                                        <connections>
+                                            <action selector="searchButtonTouched:" destination="dOm-OO-YAH" eventType="touchUpInside" id="gIG-av-1AF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="oxU-oB-06h" firstAttribute="leading" secondItem="sUq-0d-UgL" secondAttribute="leading" constant="15" id="8bg-lk-OdA"/>
+                                    <constraint firstAttribute="trailing" secondItem="fKn-h1-k3T" secondAttribute="trailing" constant="9" id="HX5-up-Q6M"/>
+                                    <constraint firstAttribute="trailing" secondItem="oxU-oB-06h" secondAttribute="trailing" constant="60" id="Jmn-N5-64i"/>
+                                    <constraint firstAttribute="height" constant="60" id="RP0-7p-yVc"/>
+                                    <constraint firstItem="fKn-h1-k3T" firstAttribute="centerY" secondItem="sUq-0d-UgL" secondAttribute="centerY" id="iah-fr-RpI"/>
+                                    <constraint firstItem="oxU-oB-06h" firstAttribute="centerY" secondItem="sUq-0d-UgL" secondAttribute="centerY" id="ram-HU-BO5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mu6-bI-HFB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="cNe-l1-WwX" firstAttribute="centerX" secondItem="Mu6-bI-HFB" secondAttribute="centerX" id="G0a-LV-VaZ"/>
+                            <constraint firstItem="cNe-l1-WwX" firstAttribute="top" secondItem="RR9-FP-iA6" secondAttribute="bottom" constant="8" symbolic="YES" id="IVf-j9-I47"/>
+                            <constraint firstItem="Mu6-bI-HFB" firstAttribute="bottom" secondItem="sUq-0d-UgL" secondAttribute="bottom" id="MRQ-Ju-j8q"/>
+                            <constraint firstItem="sUq-0d-UgL" firstAttribute="top" secondItem="cNe-l1-WwX" secondAttribute="bottom" constant="1" id="Tb7-Vf-AAZ"/>
                             <constraint firstItem="RR9-FP-iA6" firstAttribute="centerX" secondItem="Mu6-bI-HFB" secondAttribute="centerX" id="ggH-DJ-L1G"/>
                             <constraint firstItem="RR9-FP-iA6" firstAttribute="top" secondItem="Mu6-bI-HFB" secondAttribute="top" constant="47" id="iBb-c5-cwL"/>
+                            <constraint firstItem="sUq-0d-UgL" firstAttribute="centerX" secondItem="Mu6-bI-HFB" secondAttribute="centerX" id="pBy-bN-gy7"/>
+                            <constraint firstItem="cNe-l1-WwX" firstAttribute="width" secondItem="qB1-3W-Enn" secondAttribute="width" id="r1X-X1-PNk"/>
+                            <constraint firstItem="sUq-0d-UgL" firstAttribute="width" secondItem="qB1-3W-Enn" secondAttribute="width" id="vG8-rR-mE2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tfSearch" destination="oxU-oB-06h" id="OXb-Ph-31u"/>
+                        <outlet property="tvBlogs" destination="cNe-l1-WwX" id="WNP-kO-KKA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O38-lJ-zj3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1364" y="2745"/>
+            <point key="canvasLocation" x="1362.6168224299065" y="2744.7084233261339"/>
         </scene>
     </scenes>
     <resources>
